@@ -9,7 +9,8 @@ known_face_names = []
 
 # Load known face and their names here
 # Copy for each person you want to "identify"
-path = "assets/people/images/"
+root = "/var/www/html/python-face-recognition/"
+path = root+"assets/people/images/"
 
 known_person1_image = face_recognition.load_image_file(path+"kylep.jpg")
 known_person1_encoding = face_recognition.face_encodings(known_person1_image)[0]
@@ -51,7 +52,7 @@ while True:
             name = known_face_names[first_match_index]
             if name == "Kyle P" and soundPlayed == False:
                 # this is to determine if I can be detected and take an action - POC only
-                playsound("assets/sound/beep-6.wav")
+                playsound(root+"assets/sound/beep-6.wav")
                 # print(f"Found - Logging in...")
                 soundPlayed = True
                 subprocess.Popen("loginctl unlock-session `loginctl list-sessions | grep 'seat0' | awk '{print $1}'`", shell=True)
