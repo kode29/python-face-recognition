@@ -52,7 +52,7 @@ while True:
             name = known_face_names[first_match_index]
             if name == "Kyle P" and soundPlayed == False:
                 # this is to determine if I can be detected and take an action - POC only
-                playsound(root+"assets/sound/assets/sound/fantasy_ui_.mp3")
+                playsound(root+"assets/sound/fantasy_ui_button_6-102219.mp3")
                 # print(f"Found - Logging in...")
                 soundPlayed = True
                 subprocess.Popen("loginctl unlock-session `loginctl list-sessions | grep 'seat0' | awk '{print $1}'`", shell=True)
